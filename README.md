@@ -88,3 +88,4 @@ Create a .env file in root dir with your infura provider key: `INFURA=your_key`
 Install dependencies: `$ yarn install`
 
 Run example: `$ ts-node ./test/testScripts/example-swapExactIn.ts`
+
