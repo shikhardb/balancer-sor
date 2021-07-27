@@ -1,5 +1,4 @@
 import { BigNumber } from './utils/bignumber';
-
 export interface PoolPairData {
     id: string;
     tokenIn: string;
@@ -10,16 +9,14 @@ export interface PoolPairData {
     weightOut: BigNumber;
     swapFee: BigNumber;
 }
-
 export interface Path {
-    id: string; // pool address if direct path, contactenation of pool addresses if multihop
+    id: string;
     swaps: Swap[];
     spotPrice?: BigNumber;
     slippage?: BigNumber;
     limitAmount?: BigNumber;
     slippagePriceFactor?: BigNumber;
 }
-
 export interface EffectivePrice {
     price?: BigNumber;
     id?: string;
@@ -28,7 +25,6 @@ export interface EffectivePrice {
     amounts?: BigNumber[];
     bestPools?: string[];
 }
-
 export interface Price {
     price?: BigNumber;
     id?: string;
@@ -37,8 +33,7 @@ export interface Price {
     amounts?: BigNumber[];
     bestPathsIds?: string[];
 }
-
-export type Swap = {
+export declare type Swap = {
     pool: string;
     tokenIn: string;
     tokenOut: string;
@@ -46,11 +41,9 @@ export type Swap = {
     limitReturnAmount?: string;
     maxPrice?: string;
 };
-
 export interface Pools {
     pools: Pool[];
 }
-
 export interface Pool {
     id: string;
     swapFee: BigNumber;
@@ -58,18 +51,15 @@ export interface Pool {
     tokens: Token[];
     tokensList: string[];
 }
-
 export interface Token {
     address: string;
     balance: BigNumber;
     decimals: number;
     denormWeight: BigNumber;
 }
-
 export interface SubGraphPools {
     pools: SubGraphPool[];
 }
-
 export interface SubGraphPool {
     id: string;
     swapFee: string;
@@ -78,18 +68,15 @@ export interface SubGraphPool {
     tokens: SubGraphToken[];
     tokensList: string[];
 }
-
 export interface SubGraphToken {
     address: string;
     balance: string;
     decimals: string;
     denormWeight: string;
 }
-
 export interface PoolDictionary {
     [poolId: string]: Pool;
 }
-
 export interface DisabledOptions {
     isOverRide: boolean;
     disabledTokens: DisabledToken[];
